@@ -24,6 +24,18 @@
   color: white;
 }
 
+.venntooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 12px;
+  padding: 8px;
+  margin-top: -20px;
+  font: 10px sans-serif;
+  background: #ddd;
+  pointer-events: none;
+}
+
 .App-link {
   color: #61dafb;
 }
