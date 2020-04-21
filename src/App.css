@@ -36,6 +36,22 @@
   pointer-events: none;
 }
 
+.venn-div {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.venn-div svg {
+  background: #fff;
+  box-shadow: 1px 1px 8px 3px #9c9c9c;
+  border-radius: 5px;
+  padding: 20px 0px;
+}
+
 .App-link {
   color: #61dafb;
 }

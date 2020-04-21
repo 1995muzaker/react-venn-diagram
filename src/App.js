@@ -7,32 +7,32 @@ import * as venn from "venn.js";
 var sets = [
   {
     size: 3411,
-    sets: ["91", "101", "111"]
+    sets: ["Radiohead", "Thom Yorke", "John Lennon"],
   },
   {
     size: 5039,
-    sets: ["91", "101"]
+    sets: ["Radiohead", "Thom Yorke"],
   },
   {
     size: 4829,
-    sets: ["91", "111"]
+    sets: ["Radiohead", "John Lennon"],
   },
   {
     size: 14861,
-    sets: ["101", "111"]
+    sets: ["Thom Yorke", "John Lennon"],
   },
   {
     size: 21792,
-    sets: ["91"]
+    sets: ["Radiohead"],
   },
   {
     size: 35261,
-    sets: ["101"]
+    sets: ["Thom Yorke"],
   },
   {
     size: 37272,
-    sets: ["111"]
-  }
+    sets: ["John Lennon"],
+  },
 ];
 
 class App extends Component {
@@ -49,7 +49,7 @@ class App extends Component {
 
     div
       .selectAll("g")
-      .on("mouseover", function(d, i) {
+      .on("mouseover", function (d, i) {
         //console.log(this)
 
         // sort all the areas relative to the current item
@@ -66,10 +66,7 @@ class App extends Component {
         tooltip.text(`${d.size}  users`);
 
         // highlight the current path
-        var selection = d3
-          .select(this)
-          .transition("tooltip")
-          .duration(400);
+        var selection = d3.select(this).transition("tooltip").duration(400);
         selection
           .select("path")
           .style("stroke-width", 3)
@@ -77,7 +74,7 @@ class App extends Component {
           .style("stroke-opacity", 1);
       })
 
-      .on("mousemove", function() {
+      .on("mousemove", function () {
         //console.log(d3.event)
         console.log(tooltip);
         tooltip
@@ -85,15 +82,9 @@ class App extends Component {
           .style("top", d3.event.pageY - 28 + "px");
       })
 
-      .on("mouseout", function(d, i) {
-        tooltip
-          .transition()
-          .duration(400)
-          .style("opacity", 0);
-        var selection = d3
-          .select(this)
-          .transition("tooltip")
-          .duration(400);
+      .on("mouseout", function (d, i) {
+        tooltip.transition().duration(400).style("opacity", 0);
+        var selection = d3.select(this).transition("tooltip").duration(400);
         selection
           .select("path")
           .style("stroke-width", 0)
@@ -102,7 +93,12 @@ class App extends Component {
       });
   }
   render() {
-    return <div className="" ref="chart"></div>;
+    return (
+      <div className="venn-div">
+        <h2>Venn Diagram in React.js</h2>
+        <div className="" ref="chart"></div>
+      </div>
+    );
   }
 }
 
