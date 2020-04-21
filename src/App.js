@@ -63,7 +63,7 @@ class App extends Component {
           .duration(400)
           .style("opacity", 1)
           .style("display", "inline");
-        tooltip.text(`${d.size}  users`);
+        tooltip.text(`${d.size} ${d.sets} Users `);
 
         // highlight the current path
         var selection = d3.select(this).transition("tooltip").duration(400);

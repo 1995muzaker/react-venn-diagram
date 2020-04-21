@@ -27,8 +27,8 @@
 .venntooltip {
   position: absolute;
   text-align: center;
-  width: 60px;
-  height: 12px;
+  width: auto;
+  height: auto;
   padding: 8px;
   margin-top: -20px;
   font: 10px sans-serif;
