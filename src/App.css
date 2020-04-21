@@ -37,7 +37,7 @@
 }
 
 .venn-div {
-  background-color: #fff;
+  background-color: #1d1c1c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,9 +45,13 @@
   flex-direction: column;
 }
 
+.venn-div h2{
+  color: #fff;
+}
+
 .venn-div svg {
-  background: #fff;
-  box-shadow: 1px 1px 8px 3px #9c9c9c;
+  background: #000;
+  box-shadow: 1px 1px 8px 3px #000;
   border-radius: 5px;
   padding: 20px 0px;
 }
