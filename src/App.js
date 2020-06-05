@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import logo from "./logo.svg";
 import "./App.css";
 import * as d3 from "d3";
 import * as venn from "venn.js";
@@ -36,9 +35,13 @@ var sets = [
 ];
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.chartView = React.createRef();
+  }
   chart = venn.VennDiagram();
   componentDidMount() {
-    let div = d3.select(this.refs.chart);
+    let div = d3.select(this.chartView);
     div.datum(sets).call(this.chart);
 
     var tooltip = d3
@@ -76,7 +79,7 @@ class App extends Component {
 
       .on("mousemove", function () {
         //console.log(d3.event)
-        console.log(tooltip);
+        // console.log(tooltip);
         tooltip
           .style("left", d3.event.pageX + "px")
           .style("top", d3.event.pageY - 28 + "px");
@@ -96,7 +99,7 @@ class App extends Component {
     return (
       <div className="venn-div">
         <h2>Venn Diagram in React.js</h2>
-        <div className="" ref="chart"></div>
+        <div className="" ref={(el) => (this.chartView = el)}></div>
       </div>
     );
   }
